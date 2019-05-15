@@ -3,13 +3,13 @@
 shopt -s expand_aliases
 
 mkdir -p /root/perldoc.perl.org-engine/work
-cd /root/perldoc.perl.org/work
+cd /root/perldoc.perl.org-engine/work
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 rm -Rf output-tmp
 git clone git@github.com:OpusVL/perldoc.perl.org-export.git output-tmp
 cp -fr output-tmp/. output/
 rm -Rf output-tmp
-rm -f /root/perldoc.perl.org/syntax.cache
+rm -f /root/perldoc.perl.org-engine/syntax.cache
 
 while true
 do
