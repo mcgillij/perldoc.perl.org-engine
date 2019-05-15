@@ -122,6 +122,7 @@ sub run {
             chdir $env->{local_path};
 
             print  "POD extracting for for: perl-$major.$minor\n";
+            print "Changing to ".$env->{local_path}."\n";
 
             @args = ('make','-f','Makefile.perldoc','pod');
             ($output, $exit) = capture_merged { system(@args) };
