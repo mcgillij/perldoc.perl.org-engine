@@ -2,7 +2,7 @@
 
 shopt -s expand_aliases
 
-mkdir -p /root/perldoc.perl.org/work
+mkdir -p /root/perldoc.perl.org-engine/work
 cd /root/perldoc.perl.org/work
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 rm -Rf output-tmp
@@ -13,7 +13,7 @@ rm -f /root/perldoc.perl.org/syntax.cache
 
 while true
 do
-    cd /root/perldoc.perl.org
+    cd /root/perldoc.perl.org-engine
     git checkout local-dev
     perl sitegen.pl
     cd /root/perldoc.perl.org/work/output
