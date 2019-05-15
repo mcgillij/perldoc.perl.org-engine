@@ -2,21 +2,21 @@
 
 shopt -s expand_aliases
 
-mkdir -p /root/perldoc.perl.org-engine/work
-cd /root/perldoc.perl.org-engine/work
+mkdir -p /mnt/store/perldoc/perldoc.perl.org-engine/work
+cd /mnt/store/perldoc/perldoc.perl.org-engine/work
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 rm -Rf output-tmp
 git clone git@github.com:OpusVL/perldoc.perl.org-export.git output-tmp
 cp -fr output-tmp/. output/
 rm -Rf output-tmp
-rm -f /root/perldoc.perl.org-engine/syntax.cache
+rm -f /mnt/store/perldoc/perldoc.perl.org-engine/syntax.cache
 
 while true
 do
-    cd /root/perldoc.perl.org-engine
+    cd /mnt/store/perldoc/perldoc.perl.org-engine
     git checkout local-dev
     perl sitegen.pl
-    cd /root/perldoc.perl.org/work/output
+    cd /mnt/store/perldoc/perldoc.perl.org-engine/work/output
     latest_perl=$(perl -MJSON -MData::Dumper -e 'local $/;open($fh,"<","versions.json");$j=decode_json(<$fh>);print join(".",5,$j->{latest}->{major},$j->{latest}->{minor})')
     ln -sf $latest_perl .default
     git add .
