@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "bootstrap": "^4.2.1",
-    "grunt": "^1.0.3",
+    "grunt": "^1.5.2",
     "grunt-compress-images": "^1.0.4",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-less": "^2.0.0",
